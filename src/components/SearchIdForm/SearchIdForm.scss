@@ -1,0 +1,39 @@
+@import 'styles/utils.scss';
+
+.search-form-wrapper {
+  border-bottom: 1px solid $oc-gray-9;
+  background-color: $oc-indigo-7;
+  display:flex;
+  width:100%;
+  padding: 0.8rem 4rem;
+  .logo-lol {
+    position:absolute;
+    width:32px;
+    height:32px;
+    left:15px;
+    top:15px;
+    background-image:url("https://opgg-static.akamaized.net/images/logo/logo-lol.png");
+  }
+  input {
+    flex: 1;
+    font-family: inherit;
+    font-size: 1.5rem;
+    outline: none;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid $oc-gray-2;
+    color:$oc-gray-0;
+    font-weight: 100;
+    text-align:center;
+    &:focus {
+        border-bottom: 1px solid $oc-gray-2;
+    }
+    
+  }
+  input::-webkit-input-placeholder {
+    color: $oc-indigo-3;
+    text-align:center;
+  }
+}
+
+

@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400');
+@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', 'Roboto';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  box-sizing: inherit;
+}
+
+a{
+  text-decoration: inherit;
+  color: inherit;
+}
