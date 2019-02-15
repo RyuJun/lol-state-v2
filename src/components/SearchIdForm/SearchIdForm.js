@@ -1,10 +1,10 @@
 import React from 'react';
 import './SearchIdForm.scss';
 
-const SearchIdForm = ({ value, onChange, onKeyPress }) => {
+const SearchIdForm = ({ onKeyPress }) => {
   return (
     <div className="search-form-wrapper">
-      <input type="text" value={value} onChange={onChange} onKeyPress={onKeyPress} placeholder="plzzz... Summoner name"/>
+      <input type="text" onKeyPress={onKeyPress} placeholder="Summoner Name" />
       <div className="logo-lol"></div>
     </div>
   );

@@ -27,7 +27,7 @@ export default handleActions({
       onSuccess: (state, action) => {
           const { accountId, id, name, profileIconId, puuid, revisionDate, summonerLevel } = action.payload.data;
           return {
-              data: {
+            data: {
                 accountId,
                 id,
                 name,
