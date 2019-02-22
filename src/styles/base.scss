@@ -16,3 +16,12 @@ a{
   text-decoration: inherit;
   color: inherit;
 }
+.loading-gif {
+  position:absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 75px);
+  width: 150px;
+  height: 150px;
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/09b24e31234507.564a1d23c07b4.gif");
+  background-size: 100% 100%;
+}

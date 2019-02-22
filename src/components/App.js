@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import AppHeaderContainer from 'containers/AppHeaderContainer';
-import GetStore from 'components/GetStore';
+import AppContentContainer from 'containers/AppContentContainer';
 
 class App extends Component {
   render() {
     return (
       <>
         <AppHeaderContainer/>
-        <GetStore />
+        <AppContentContainer />
       </>
     );
   }

@@ -6,6 +6,9 @@ import { bindActionCreators } from 'redux';
 
 import * as inputActions from 'modules/input';
 import * as summonerActions from 'modules/summoner';
+import * as leagueActions from 'modules/league';
+import * as matchActions from 'modules/match';
+
 
 
 
@@ -20,10 +23,15 @@ class AppHeaderContainer extends Component {
   }
 
   loadData = async (value) => {
-    const { SummonerActions }  = this.props;
+    const { SummonerActions, LeagueActions, MatchActions }  = this.props;
     try {
-        const s = SummonerActions.getSummoner(value);
+        const s = await SummonerActions.getSummoner(value);
+        const l = await LeagueActions.getLeague(s.data.id);
+        const m = await MatchActions.getMatch(s.data.accountId);
         this.cancelRequest = s.cancel;
+        this.cancelRequest = l.cancel;
+        this.cancelRequest = m.cancel;
+        
     } catch(e) {
         console.log(e);
     }
@@ -51,6 +59,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   InputActions: bindActionCreators(inputActions, dispatch),
   SummonerActions : bindActionCreators(summonerActions, dispatch),
+  LeagueActions: bindActionCreators(leagueActions, dispatch),
+  MatchActions: bindActionCreators(matchActions, dispatch)
 })
 
 
