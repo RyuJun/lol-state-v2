@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# "# React lol-state-v2
+React를 활용한 개인학습을 위한 프로젝트로,
+즐겨 하는 게임인 리그오브레전드의
+게임 플레이 정보, 리그정보, MMR정보, 등의 정보를 보여주는
+App 이다. 참고 사이트 [op.gg](https://www.op.gg/).
+<br>
+- `v2` 버전은 `Redux`를 활용하여 상태관리의 효율성을 높힘.
+- `sass`를 통하여 CSS코드를 보다 쉽게 작성하고 `flex`로 레이아웃 구성
+- `redux-pender`를 통하여 라이엇에 request를 보내는 부분에서 `pending` 적용
+- `webpack` 옵션 중 `proxy` 옵션을 사용하여 API 요청 부분에서 `CORS` 오류 해결 
 
-## Available Scripts
+<br><br>
+## ## 작업환경
+`node v10.5.0`, `yarn v1.7.0`
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<br><br>
+## ## 구조
+- 폴더구조<br>
+  ```
+  public/
+    favicon.ico
+    index.html
+    manifast.json
+  src/
+    components/
+    containers/
+    lib/
+    modules/
+    static-data/
+    styles/
+    index.js
+    serviceWorker.js
+  .gitignore
+  README.md
+  package.json
+  yarn.lock
+  ```
