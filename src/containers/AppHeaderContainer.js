@@ -31,7 +31,6 @@ class AppHeaderContainer extends Component {
         this.cancelRequest = s.cancel;
         this.cancelRequest = l.cancel;
         this.cancelRequest = m.cancel;
-        
     } catch(e) {
         console.log(e);
     }

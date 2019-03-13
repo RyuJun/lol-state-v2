@@ -1,106 +1,70 @@
-// .user-profile-img-section {
-//   position: relative;
-//   width:130px;
-//   height:130px;
-//   padding:1rem;
-//   margin-top:1rem;
+// .container {
+//   background-color: powderblue;
+//   height: 200px;
 //   display:flex;
-//   align-items: center;
-//   justify-content: center;
-//   img {
-//     position:absolute;
-//     left:0;
-//     top:0;
-//     width:100%;
-//     height:auto;
+//   flex-direction: row;
+//   .item {
+//     background-color: tomato;
+//     color:white;
+//     border:1px solid white;
 //   }
-//   img:first-child {
-//     width:110px;
-//     height:110px;
-//     left: auto;
-//     top: auto;
+//   .item:nth-child(1){
+//     flex-basis: 150px;
+//     flex-shrink: 1;
 //   }
-//   span {
-//     position:absolute;
-//     left: calc(50% - 22px);
-//     bottom: 5px;
-//     width:44px;
-//     height:24px;
-//     background:url(http://opgg-static.akamaized.net/images/site/summoner/bg-levelbox.png) no-repeat;
-//     background-size:auto 100%;
-//     color:#eabd56;
-//     text-align: center;
+//   .item:nth-child(2){
+//     flex-basis: 150px;
+//     flex-shrink: 2;
 //   }
 // }
 
-.container {
-  background-color: powderblue;
-  height: 200px;
+.user-profile-wrapper {
+  max-width:800px;
+  margin:0 auto;
+  padding:3rem 0;
+  background:orange;
   display:flex;
-  flex-direction: row;
-  .item {
-    background-color: tomato;
+  align-items: center;
+  justify-content: center;
+  
+  .user-profile-img-section {
+    flex-basis:150px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .user-profile-img-wrapper {
+      flex-basis:80px;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width:140px;
+        display:flex;
+        position:absolute;
+      }
+      img:first-child {
+        width:120px;
+      }
+      span {
+        display:flex;
+        position:absolute;
+        align-items: center;
+        justify-content: center;
+        top:46px;
+        width:44px;
+        height:24px;
+        background:url(http://opgg-static.akamaized.net/images/site/summoner/bg-levelbox.png) no-repeat;
+        background-size:auto 100%;
+        color:#eabd56;
+        text-align: center;
+      }
+    }
+  }
+  .user-profile-content-section {
+    flex-grow:1;
+    background:blue;
     color:white;
-    border:1px solid white;
-  }
-  .item:nth-child(1){
-    flex-basis: 150px;
-    flex-shrink: 1;
-  }
-  .item:nth-child(2){
-    flex-basis: 150px;
-    flex-shrink: 2;
   }
 }
-
-
-// .user-profile-img-section > 
-// .animateNumberAreaTitle {
-//   margin-top: 24px;
-//   margin-bottom: 0;
-// }
-// .animateNumberArea {
-//   position: relative;
-//   width:100%;
-//   height:65px;
-//   overflow:hidden;
-// }
-// .card-title {
-//   margin-top:7px;
-// }
-
-// .tierImg {
-//   width:130px;
-//   height:130px;
-//   margin:0 auto;
-//   margin-top:10px;
-//   float:none;
-// }
-// .tierImg > img {
-//   width:100%;
-//   height:100%;
-  
-// }
-// .tierTextArea {
-//   padding-top:13px;
-//   padding-left:20px;
-//   overflow: visible;
-//   text-align:center;
-// }
-// .tierTextArea2 {
-//   padding-left:20px;
-// }
-
-// .rightLeagueContent {
-//   float:left;
-// }
-// .circularProgressbarStyle svg {
-//   max-width:100px;
-//   margin-top: 35px;
-// }
-// .commentText {
-//   color:#1c7ed6;
-//   line-height: 20px;
-//   word-break: keep-all;
-//   font-weight: 400;
-// }
