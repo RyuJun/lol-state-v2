@@ -4,7 +4,7 @@ import './SearchIdForm.scss';
 const SearchIdForm = ({ onKeyPress }) => {
   return (
     <div className="search-form-wrapper">
-      <input type="text" onKeyPress={onKeyPress} placeholder="Summoner Name" />
+      <input type="text" onKeyPress={onKeyPress} placeholder="Summoner Name" value="kkdan" />
       <div className="logo-lol"></div>
     </div>
   );
