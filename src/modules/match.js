@@ -11,10 +11,10 @@ export const getMatch = createAction(GET_MATCH, getMatchData);
 
 const initialState = {
   data   : {
-    endIndex: Number,
-    matches: Array,
-    startIndex: Number,
-    totalGames: Number
+    endIndex: 0,
+    matches: [],
+    startIndex: 0,
+    totalGames: 0
   }
 }
 

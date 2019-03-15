@@ -1,19 +1,14 @@
 import { handleActions, createAction } from 'redux-actions';
-import { pender, applyPenders } from 'redux-pender';
+import { pender } from 'redux-pender';
 import ApiDefault from 'lib/ApiDefault';
 
-function getSummonerData (Summoner) {
+function getApiData (Summoner) {
   return ApiDefault.instance.get(`/summoner/v4/summoners/by-name/${Summoner}?api_key=${ApiDefault.key}`)
 }
-function getMatchData (accountId) {
-  return ApiDefault.instance.get(`/match/v4/matchlists/by-account/${accountId}?api_key=${ApiDefault.key}`)
-}
 
-const GET_SUMMONER = 'GET_SUMMONER';
-const GET_MATCH    = 'GET_MATCH';
+const GET_API = 'GET_API';
 
-export const getSummoner = createAction(GET_SUMMONER, getSummonerData);
-export const getMatch    = createAction(GET_MATCH, getMatchData);
+export const getApi = createAction(GET_API, getApiData);
 
 const initialState = {
   data: {
@@ -21,77 +16,96 @@ const initialState = {
       accountId: "",
       id: "",
       name: "",
-      profileIconId: Number,
+      profileIconId: 0,
       puuid: "",
-      revisionDate: Number,
-      summonerLevel: Number
+      revisionDate: 0,
+      summonerLevel: 0
+    },
+    league: {
+      freshBlood: false,
+      hotStreak: false,
+      inactive: false,
+      leagueId: "",
+      leagueName: "",
+      leaguePoints: 0,
+      losses: 0,
+      position: "",
+      queueType: "",
+      rank: "",
+      summonerId: "",
+      summonerName: "",
+      tier: "",
+      veteran: false,
+      wins: 0,
     },
     match: {
-      endIndex: Number,
-      matches: Array,
-      startIndex: Number,
-      totalGames: Number
+      endIndex: 0,
+      matches: [],
+      startIndex: 0,
+      totalGames: 0
     }
   }
 }
 
-const reducer = handleActions({}, initialState);
-
-export default applyPenders(reducer, [
-  {
-    type: GET_SUMMONER, 
-    onSuccess: (state, action) => { 
-        const { accountId, id, name, profileIconId, puuid, revisionDate, summonerLevel } = action.payload.data;
-        return {
-          data:{
-            summoner: {
-              accountId,
-              id,
-              name,
-              profileIconId,
-              puuid,
-              revisionDate,
-              summonerLevel,
-            },
-          }
-      }
-    }
-  },
-  {
-    type: GET_MATCH, 
-    onSuccess: (state, action) => { 
-        const { endIndex, matches, startIndex, totalGames } = action.payload.data;
-        return {
-          data:{
-            match: {
-              endIndex,
-              matches,
-              startIndex,
-              totalGames
+export default handleActions({
+  ...pender({
+      type: GET_API,
+      onSuccess: (state, action) => {
+          const { accountId, id, name, profileIconId, puuid, revisionDate, summonerLevel } = action.payload.data;
+          return {
+            data:{
+              summoner: {
+                accountId,
+                id,
+                name,
+                profileIconId,
+                puuid,
+                revisionDate,
+                summonerLevel,
+              }
             }
           }
-        }
-    }
-  },
-]);
-// export default handleActions({
-//   ...pender({
-//       type: GET_API,
-//       onSuccess: (state, action) => {
-//           const { accountId, id, name, profileIconId, puuid, revisionDate, summonerLevel } = action.payload.data;
-//           return {
-//             data:{
-//               summoner: {
-//                 accountId,
-//                 id,
-//                 name,
-//                 profileIconId,
-//                 puuid,
-//                 revisionDate,
-//                 summonerLevel,
-//               }
-//             }
+      }
+  })
+}, initialState);
+
+
+// const reducer = handleActions({}, initialState);
+
+// export default applyPenders(reducer, [
+//   {
+//     type: GET_SUMMONER, 
+//     onSuccess: (state, action) => { 
+//         const { accountId, id, name, profileIconId, puuid, revisionDate, summonerLevel } = action.payload.data;
+//         return {
+//           data:{
+//             summoner: {
+//               accountId,
+//               id,
+//               name,
+//               profileIconId,
+//               puuid,
+//               revisionDate,
+//               summonerLevel,
+//             },
 //           }
 //       }
-//   })
-// }, initialState);
+//     }
+//   },
+//   {
+//     type: GET_MATCH, 
+//     onSuccess: (state, action) => { 
+//         const { endIndex, matches, startIndex, totalGames } = action.payload.data;
+//         return {
+//           data:{
+//             match: {
+//               endIndex,
+//               matches,
+//               startIndex,
+//               totalGames
+//             }
+//           }
+//         }
+//     }
+//   },
+// ]);

@@ -11,21 +11,21 @@ export const getLeague = createAction(GET_LEAGUE, getLeagueData);
 
 const initialState = {
   data   : {
-    freshBlood: Boolean,
-    hotStreak: Boolean,
-    inactive: Boolean,
-    leagueId: String,
-    leagueName: String,
-    leaguePoints: Number,
-    losses: Number,
-    position: String,
-    queueType: String,
-    rank: String,
-    summonerId: String,
-    summonerName: String,
+    freshBlood: 0,
+    hotStreak: 0,
+    inactive: 0,
+    leagueId: "",
+    leagueName: "",
+    leaguePoints: 0,
+    losses: 0,
+    position: "",
+    queueType: "",
+    rank: "",
+    summonerId: "",
+    summonerName: "",
     tier: "bronze",
-    veteran: Boolean,
-    wins: Number,
+    veteran: 0,
+    wins: 0,
   }
 }
 

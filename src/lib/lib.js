@@ -1,5 +1,5 @@
-import champData from '../static-data/champ-static-data';
-import itemData from '../static-data/item-static-data';
+import champData from 'static-data/champ-static-data';
+import itemData from 'static-data/item-static-data';
 
 const defaultMMR = [
     { "mmr" : 1000, "tier" : "bronze", "rank": 5 },
@@ -174,7 +174,10 @@ const getPreferData = (data) => {
   return preferData;
 }
 const GetUserMMR = {
-    getWinningRateMMR : (winningRate) => (winningRate - 50) * 20,
+    getWinningRateMMR : (winningRate) => {
+      console.log(winningRate);
+      return (winningRate - 50) * 20;
+    },
     getTierMMR : (league, rank) => defaultMMR.filter(item => item.tier === league.tier.toLowerCase() && item.rank === rank),
     getCommntData : (mmrData, league, rank) => {
         let myMMRcomment = ''; 
