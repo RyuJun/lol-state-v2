@@ -26,7 +26,7 @@ const ViewUserStateProfile = ({ summoner, league }) => {
             /> */}
       </div>
         <div className="user-profile-league-section">
-          <div className="user-profile-leagueName">{league.leagueName}</div>
+          {/* <div className="user-profile-leagueName">{league.leagueName}</div> */}
           {/* <div className="user-profile-name">{name}</div>
           <div className="user-profile-winlose">{winLose}</div>
           <div className="user-profile-leaguepoint">{point}</div>

@@ -27,20 +27,14 @@ class AppHeaderContainer extends Component {
 
   loadData = async (value) => {
     // const { SummonerActions, LeagueActions, MatchActions }  = this.props;
+    const { ApiActions }= this.props;
     try {
-      const summoner = await ApiDefault.instance.get(`/summoner/v4/summoners/by-name/${value}?api_key=${ApiDefault.key}`);
-      const league   = await ApiDefault.instance.get(`/league/v4/positions/by-summoner/${summoner.data.id}?api_key=${ApiDefault.key}`); 
-      const match    = await ApiDefault.instance.get(`/match/v4/matchlists/by-account/${summoner.data.accountId}?api_key=${ApiDefault.key}`);
-      // const m = await ApiDefault.instance.get(`/match/v4/matchlists/by-account/${s.accountId}?api_key=${ApiDefault.key}`);
-      // const s = await SummonerActions.getSummoner(value);
-      // const l = await LeagueActions.getLeague(s.data.id);
-      // const m = await MatchActions.getMatch(s.data.accountId);
-      // this.cancelRequest = s.cancel;
-      // this.cancelRequest = l.cancel;
-      // this.cancelRequest = m.cancel;
-      console.log(summoner.data);
-      console.log(league.data[0]);
-      console.log(match.data);
+      const s = await ApiActions.getSummoner(value);
+      const l = await ApiActions.getLeague(s.data.id);
+      const m = await ApiActions.getMatch(s.data.accountId);
+      this.cancelRequest = s.cancel;
+      this.cancelRequest = l.cancel;
+      this.cancelRequest = m.cancel;
     } catch(e) {
         console.log(e);
     }
@@ -51,7 +45,6 @@ class AppHeaderContainer extends Component {
   render() {
       const { value } = this.props;
       const { handleChange, handleKeyPress } = this;
-
       return (
           <SearchIdForm 
             value={value}
@@ -63,7 +56,8 @@ class AppHeaderContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  summoner: state.summoner.data,
+  //summoner: state.summoner.data,
+  data: state.api.data
 });
 const mapDispatchToProps = (dispatch) => ({
   InputActions: bindActionCreators(inputActions, dispatch),

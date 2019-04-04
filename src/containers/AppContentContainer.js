@@ -8,10 +8,11 @@ import { connect } from 'react-redux';
 class AppContentContainer extends Component {
   render() {
     const { summoner, league, loading, error } = this.props;
+    console.log(loading);
     return (
       <>
        {
-        loading
+        loading || loading === undefined
             ? (
               <div className="loading-gif"></div>
             )
@@ -37,8 +38,8 @@ class AppContentContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  summoner: state.summoner.data,
-  league: state.league.data,
+  summoner: state.api.data.summoner,
+  league: state.api.data.league,
   loading: state.pender.pending['GET_MATCH'],
   error: state.pender.failure['GET_MATCH']
 });
